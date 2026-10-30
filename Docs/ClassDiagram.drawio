@@ -1,0 +1,454 @@
+<mxfile host="Electron">
+  <diagram id="cactus-class" name="ページ-1">
+    <mxGraphModel dx="1414" dy="841" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1560" pageHeight="1300" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="diagram-title" parent="1" style="text;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;fontFamily=Yu Gothic;fontSize=24;spacing=0;strokeColor=none;" value="&lt;h1 style=&quot;margin-top:0px;font-size:24px;&quot;&gt;Assault Android Cactus Class&lt;/h1&gt;" vertex="1">
+          <mxGeometry height="50" width="800" x="200" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="game" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="" vertex="1">
+          <mxGeometry height="150" width="210" x="590" y="117.5" as="geometry" />
+        </mxCell>
+        <mxCell id="game-title" parent="game" style="text;html=1;whiteSpace=wrap;overflow=hidden;fontFamily=Yu Gothic;fontSize=8;spacing=0;strokeColor=none;align=center;verticalAlign=middle;" value="ACactusGameMode（ゲーム進行）" vertex="1">
+          <mxGeometry height="24" width="210" as="geometry" />
+        </mxCell>
+        <mxCell id="game-sep1" parent="game" style="shape=line;strokeColor=#555555;" value="" vertex="1">
+          <mxGeometry height="1" width="210" y="24" as="geometry" />
+        </mxCell>
+        <mxCell id="game-attrs" parent="game" style="text;html=1;whiteSpace=wrap;overflow=hidden;fontFamily=Yu Gothic;fontSize=8;spacing=0;strokeColor=none;align=left;verticalAlign=top;" value="&lt;div style=&quot;line-height:10px;&quot;&gt;- 進行状態: RunState&lt;/div&gt;&lt;div style=&quot;line-height:10px;&quot;&gt;- 電池残量 / 消費速度: float&lt;/div&gt;&lt;div style=&quot;line-height:10px;&quot;&gt;- スコア: int&lt;/div&gt;&lt;div style=&quot;line-height:10px;&quot;&gt;- 敵生成: ACactusEnemySpawner*&lt;/div&gt;&lt;div style=&quot;line-height:10px;&quot;&gt;- 画面: UCactusScreenWidget*&lt;/div&gt;&lt;div style=&quot;line-height:10px;&quot;&gt;- プレイヤー: ACactusPlayerCharacter*&lt;/div&gt;" vertex="1">
+          <mxGeometry height="64" width="202" x="4" y="28" as="geometry" />
+        </mxCell>
+        <mxCell id="game-sep2" parent="game" style="shape=line;strokeColor=#555555;" value="" vertex="1">
+          <mxGeometry height="1" width="210" y="92" as="geometry" />
+        </mxCell>
+        <mxCell id="game-ops" parent="game" style="text;html=1;whiteSpace=wrap;overflow=hidden;fontFamily=Yu Gothic;fontSize=8;spacing=0;strokeColor=none;align=left;verticalAlign=top;" value="&lt;div style=&quot;line-height:10px;&quot;&gt;+ 開始 / 終了 / 再開始(): void&lt;/div&gt;&lt;div style=&quot;line-height:10px;&quot;&gt;+ 電池消費 / 補充(): void&lt;/div&gt;&lt;div style=&quot;line-height:10px;&quot;&gt;+ 得点加算 / 通知(値): void&lt;/div&gt;&lt;div style=&quot;line-height:10px;&quot;&gt;UE基底: AGameModeBase / 電池は局単位&lt;/div&gt;" vertex="1">
+          <mxGeometry height="54" width="202" x="4" y="96" as="geometry" />
+        </mxCell>
+        <mxCell id="pickup" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="" vertex="1">
+          <mxGeometry height="125" width="190" x="980" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="pickup-title" parent="pickup" style="text;html=1;whiteSpace=wrap;overflow=hidden;fontFamily=Yu Gothic;fontSize=8;spacing=0;strokeColor=none;align=center;verticalAlign=middle;" value="&lt;div style=&quot;line-height:10px;&quot;&gt;ACactusItemPickup（取得アイテム）&lt;/div&gt;" vertex="1">
+          <mxGeometry height="24" width="190" as="geometry" />
+        </mxCell>
+        <mxCell id="pickup-sep1" parent="pickup" style="shape=line;strokeColor=#555555;" value="" vertex="1">
+          <mxGeometry height="1" width="190" y="24" as="geometry" />
+        </mxCell>
+        <mxCell id="pickup-attrs" parent="pickup" style="text;html=1;whiteSpace=wrap;overflow=hidden;fontFamily=Yu Gothic;fontSize=8;spacing=0;strokeColor=none;align=left;verticalAlign=top;" value="&lt;div style=&quot;line-height:10px;&quot;&gt;# 接触判定: USphereComponent&lt;/div&gt;&lt;div style=&quot;line-height:10px;&quot;&gt;# 取得済み: bool&lt;/div&gt;&lt;div style=&quot;line-height:10px;&quot;&gt;- UE基底: AActor&lt;/div&gt;" vertex="1">
+          <mxGeometry height="34" width="182" x="4" y="28" as="geometry" />
+        </mxCell>
+        <mxCell id="pickup-sep2" parent="pickup" style="shape=line;strokeColor=#555555;" value="" vertex="1">
+          <mxGeometry height="1" width="190" y="62" as="geometry" />
+        </mxCell>
+        <mxCell id="pickup-ops" parent="pickup" style="text;html=1;whiteSpace=wrap;overflow=hidden;fontFamily=Yu Gothic;fontSize=8;spacing=0;strokeColor=none;align=left;verticalAlign=top;" value="&lt;div style=&quot;line-height:10px;&quot;&gt;+ 接触 / 取得(Player): void&lt;/div&gt;&lt;div style=&quot;line-height:10px;&quot;&gt;+ 効果適用(Player): void {virtual}&lt;/div&gt;&lt;div style=&quot;line-height:10px;&quot;&gt;種類ごとの効果は子クラスで定義&lt;/div&gt;" vertex="1">
+          <mxGeometry height="59.0" width="182" x="4" y="66" as="geometry" />
+        </mxCell>
+        <mxCell id="screen" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="" vertex="1">
+          <mxGeometry height="105" width="190" x="240" y="130" as="geometry" />
+        </mxCell>
+        <mxCell id="screen-title" parent="screen" style="text;html=1;whiteSpace=wrap;overflow=hidden;fontFamily=Yu Gothic;fontSize=8;spacing=0;strokeColor=none;align=center;verticalAlign=middle;" value="UCactusScreenWidget（画面）" vertex="1">
+          <mxGeometry height="24" width="190" as="geometry" />
+        </mxCell>
+        <mxCell id="screen-sep1" parent="screen" style="shape=line;strokeColor=#555555;" value="" vertex="1">
+          <mxGeometry height="1" width="190" y="24" as="geometry" />
+        </mxCell>
+        <mxCell id="screen-attrs" parent="screen" style="text;html=1;whiteSpace=wrap;overflow=hidden;fontFamily=Yu Gothic;fontSize=8;spacing=0;strokeColor=none;align=left;verticalAlign=top;" value="&lt;div style=&quot;line-height:10px;&quot;&gt;# 操作窓口: APlayerController*&lt;/div&gt;&lt;div style=&quot;line-height:10px;&quot;&gt;# 進行窓口: ACactusGameMode*&lt;/div&gt;&lt;div style=&quot;line-height:10px;&quot;&gt;- UE基底: UUserWidget&lt;/div&gt;" vertex="1">
+          <mxGeometry height="34" width="182" x="4" y="28" as="geometry" />
+        </mxCell>
+        <mxCell id="screen-sep2" parent="screen" style="shape=line;strokeColor=#555555;" value="" vertex="1">
+          <mxGeometry height="1" width="190" y="62" as="geometry" />
+        </mxCell>
+        <mxCell id="screen-ops" parent="screen" style="text;html=1;whiteSpace=wrap;overflow=hidden;fontFamily=Yu Gothic;fontSize=8;spacing=0;strokeColor=none;align=left;verticalAlign=top;" value="&lt;div style=&quot;line-height:10px;&quot;&gt;+ 表示 / 非表示(): void&lt;/div&gt;&lt;div style=&quot;line-height:10px;&quot;&gt;+ 決定 / 戻る(): void {virtual}&lt;/div&gt;" vertex="1">
+          <mxGeometry height="39" width="182" x="4" y="66" as="geometry" />
+        </mxCell>
+        <mxCell id="title" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="" vertex="1">
+          <mxGeometry height="100" width="180" x="36" y="289.5" as="geometry" />
+        </mxCell>
+        <mxCell id="title-title" parent="title" style="text;html=1;whiteSpace=wrap;overflow=hidden;fontFamily=Yu Gothic;fontSize=8;spacing=0;strokeColor=none;align=center;verticalAlign=middle;" value="WBP_Title（タイトル画面）" vertex="1">
+          <mxGeometry height="24" width="180" as="geometry" />
+        </mxCell>
+        <mxCell id="title-sep1" parent="title" style="shape=line;strokeColor=#555555;" value="" vertex="1">
+          <mxGeometry height="1" width="180" y="24" as="geometry" />
+        </mxCell>
+        <mxCell id="title-attrs" parent="title" style="text;html=1;whiteSpace=wrap;overflow=hidden;fontFamily=Yu Gothic;fontSize=8;spacing=0;strokeColor=none;align=left;verticalAlign=top;" value="&lt;div style=&quot;line-height:10px;&quot;&gt;- 選択項目: int&lt;/div&gt;&lt;div style=&quot;line-height:10px;&quot;&gt;- 点滅時間: float&lt;/div&gt;" vertex="1">
+          <mxGeometry height="24" width="172" x="4" y="28" as="geometry" />
+        </mxCell>
+        <mxCell id="title-sep2" parent="title" style="shape=line;strokeColor=#555555;" value="" vertex="1">
+          <mxGeometry height="1" width="180" y="52" as="geometry" />
+        </mxCell>
+        <mxCell id="title-ops" parent="title" style="text;html=1;whiteSpace=wrap;overflow=hidden;fontFamily=Yu Gothic;fontSize=8;spacing=0;strokeColor=none;align=left;verticalAlign=top;" value="&lt;div style=&quot;line-height:10px;&quot;&gt;+ 選択変更 / 決定(): void&lt;/div&gt;&lt;div style=&quot;line-height:10px;&quot;&gt;選択色・点滅・SEで反応&lt;/div&gt;" vertex="1">
+          <mxGeometry height="44" width="172" x="4" y="56" as="geometry" />
+        </mxCell>
+        <mxCell id="hud" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="" vertex="1">
+          <mxGeometry height="110" width="190" x="240" y="330" as="geometry" />
+        </mxCell>
+        <mxCell id="hud-title" parent="hud" style="text;html=1;whiteSpace=wrap;overflow=hidden;fontFamily=Yu Gothic;fontSize=8;spacing=0;strokeColor=none;align=center;verticalAlign=middle;" value="WBP_HUD（ゲーム内UI）" vertex="1">
+          <mxGeometry height="24" width="190" as="geometry" />
+        </mxCell>
+        <mxCell id="hud-sep1" parent="hud" style="shape=line;strokeColor=#555555;" value="" vertex="1">
+          <mxGeometry height="1" width="190" y="24" as="geometry" />
+        </mxCell>
+        <mxCell id="hud-attrs" parent="hud" style="text;html=1;whiteSpace=wrap;overflow=hidden;fontFamily=Yu Gothic;fontSize=8;spacing=0;strokeColor=none;align=left;verticalAlign=top;" value="&lt;div style=&quot;line-height:10px;&quot;&gt;- 電池 / 体力 / 波番号&lt;/div&gt;&lt;div style=&quot;line-height:10px;&quot;&gt;- スコア / 武器状態 / ボス体力&lt;/div&gt;" vertex="1">
+          <mxGeometry height="24" width="182" x="4" y="28" as="geometry" />
+        </mxCell>
+        <mxCell id="hud-sep2" parent="hud" style="shape=line;strokeColor=#555555;" value="" vertex="1">
+          <mxGeometry height="1" width="190" y="52" as="geometry" />
+        </mxCell>
+        <mxCell id="hud-ops" parent="hud" style="text;html=1;whiteSpace=wrap;overflow=hidden;fontFamily=Yu Gothic;fontSize=8;spacing=0;strokeColor=none;align=left;verticalAlign=top;" value="&lt;div style=&quot;line-height:10px;&quot;&gt;+ 通知の購読 / 解除(): void&lt;/div&gt;&lt;div style=&quot;line-height:10px;&quot;&gt;+ 表示更新(): void&lt;/div&gt;&lt;div style=&quot;line-height:10px;&quot;&gt;配置・画像・ゲージを設定&lt;/div&gt;" vertex="1">
+          <mxGeometry height="54" width="182" x="4" y="56" as="geometry" />
+        </mxCell>
+        <mxCell id="result" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="" vertex="1">
+          <mxGeometry height="100" width="190" x="440" y="330" as="geometry" />
+        </mxCell>
+        <mxCell id="result-title" parent="result" style="text;html=1;whiteSpace=wrap;overflow=hidden;fontFamily=Yu Gothic;fontSize=8;spacing=0;strokeColor=none;align=center;verticalAlign=middle;" value="WBP_Result（結果画面）" vertex="1">
+          <mxGeometry height="24" width="190" as="geometry" />
+        </mxCell>
+        <mxCell id="result-sep1" parent="result" style="shape=line;strokeColor=#555555;" value="" vertex="1">
+          <mxGeometry height="1" width="190" y="24" as="geometry" />
+        </mxCell>
+        <mxCell id="result-attrs" parent="result" style="text;html=1;whiteSpace=wrap;overflow=hidden;fontFamily=Yu Gothic;fontSize=8;spacing=0;strokeColor=none;align=left;verticalAlign=top;" value="&lt;div style=&quot;line-height:10px;&quot;&gt;- 結果: Clear / Failed&lt;/div&gt;&lt;div style=&quot;line-height:10px;&quot;&gt;- 最終スコア: int&lt;/div&gt;&lt;div style=&quot;line-height:10px;&quot;&gt;- 選択項目: int&lt;/div&gt;" vertex="1">
+          <mxGeometry height="34" width="182" x="4" y="28" as="geometry" />
+        </mxCell>
+        <mxCell id="result-sep2" parent="result" style="shape=line;strokeColor=#555555;" value="" vertex="1">
+          <mxGeometry height="1" width="190" y="62" as="geometry" />
+        </mxCell>
+        <mxCell id="result-ops" parent="result" style="text;html=1;whiteSpace=wrap;overflow=hidden;fontFamily=Yu Gothic;fontSize=8;spacing=0;strokeColor=none;align=left;verticalAlign=top;" value="&lt;div style=&quot;line-height:10px;&quot;&gt;+ 再挑戦 / タイトルへ(): void&lt;/div&gt;&lt;div style=&quot;line-height:10px;&quot;&gt;+ 選択反応(): void&lt;/div&gt;" vertex="1">
+          <mxGeometry height="34" width="182" x="4" y="66" as="geometry" />
+        </mxCell>
+        <mxCell id="player" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="" vertex="1">
+          <mxGeometry height="150" width="210" x="740" y="420" as="geometry" />
+        </mxCell>
+        <mxCell id="player-title" parent="player" style="text;html=1;whiteSpace=wrap;overflow=hidden;fontFamily=Yu Gothic;fontSize=8;spacing=0;strokeColor=none;align=center;verticalAlign=middle;" value="&lt;div style=&quot;line-height:10px;&quot;&gt;ACactusPlayerCharacter（プレイヤー）&lt;/div&gt;&lt;div style=&quot;line-height:10px;&quot;&gt;継承: ACharacter&lt;/div&gt;" vertex="1">
+          <mxGeometry height="24" width="210" as="geometry" />
+        </mxCell>
+        <mxCell id="player-sep1" parent="player" style="shape=line;strokeColor=#555555;" value="" vertex="1">
+          <mxGeometry height="1" width="210" y="24" as="geometry" />
+        </mxCell>
+        <mxCell id="player-attrs" parent="player" style="text;html=1;whiteSpace=wrap;overflow=hidden;fontFamily=Yu Gothic;fontSize=8;spacing=0;strokeColor=none;align=left;verticalAlign=top;" value="&lt;div style=&quot;line-height:10px;&quot;&gt;- 体力 / 状態 / 強化残り時間&lt;/div&gt;&lt;div style=&quot;line-height:10px;&quot;&gt;- 武器: UCactusWeaponComponent&lt;/div&gt;&lt;div style=&quot;line-height:10px;&quot;&gt;- 入力 / カメラ: UE標準&lt;/div&gt;&lt;div style=&quot;line-height:10px;&quot;&gt;- 最大速度 / 加減速: float（BP設定）&lt;/div&gt;&lt;div style=&quot;line-height:10px;&quot;&gt;- 俯瞰距離 / 角度 / FOV: BP設定&lt;/div&gt;&lt;div style=&quot;line-height:10px;&quot;&gt;- 一人称の高さ / FOV: BP設定&lt;/div&gt;" vertex="1">
+          <mxGeometry height="64" width="202" x="4" y="28" as="geometry" />
+        </mxCell>
+        <mxCell id="player-sep2" parent="player" style="shape=line;strokeColor=#555555;" value="" vertex="1">
+          <mxGeometry height="1" width="210" y="92" as="geometry" />
+        </mxCell>
+        <mxCell id="player-ops" parent="player" style="text;html=1;whiteSpace=wrap;overflow=hidden;fontFamily=Yu Gothic;fontSize=8;spacing=0;strokeColor=none;align=left;verticalAlign=top;" value="&lt;div style=&quot;line-height:10px;&quot;&gt;+ 移動 / 照準 / 射撃 / 切替(): void&lt;/div&gt;&lt;div style=&quot;line-height:10px;&quot;&gt;+ 被ダメージ / ダウン / 復帰(): void&lt;/div&gt;&lt;div style=&quot;line-height:10px;&quot;&gt;+ 速度強化 / 解除(): void&lt;/div&gt;&lt;div style=&quot;line-height:10px;&quot;&gt;+ 入力関数の登録(): void&lt;/div&gt;" vertex="1">
+          <mxGeometry height="54.0" width="202" x="4" y="96" as="geometry" />
+        </mxCell>
+        <mxCell id="stagedata" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="" vertex="1">
+          <mxGeometry height="120" width="190" x="1294" y="269.5" as="geometry" />
+        </mxCell>
+        <mxCell id="stagedata-title" parent="stagedata" style="text;html=1;whiteSpace=wrap;overflow=hidden;fontFamily=Yu Gothic;fontSize=8;spacing=0;strokeColor=none;align=center;verticalAlign=middle;" value="UCactusStageData（ステージデータ）" vertex="1">
+          <mxGeometry height="24" width="190" as="geometry" />
+        </mxCell>
+        <mxCell id="stagedata-sep1" parent="stagedata" style="shape=line;strokeColor=#555555;" value="" vertex="1">
+          <mxGeometry height="1" width="190" y="24" as="geometry" />
+        </mxCell>
+        <mxCell id="stagedata-attrs" parent="stagedata" style="text;html=1;whiteSpace=wrap;overflow=hidden;fontFamily=Yu Gothic;fontSize=8;spacing=0;strokeColor=none;align=left;verticalAlign=top;" value="&lt;div style=&quot;line-height:10px;&quot;&gt;- 波一覧: WaveEntry[]&lt;/div&gt;&lt;div style=&quot;line-height:10px;&quot;&gt;- 敵クラス / 数 / 地点 / 生成間隔&lt;/div&gt;&lt;div style=&quot;line-height:10px;&quot;&gt;- 小型敵同時数: int (50～100)&lt;/div&gt;&lt;div style=&quot;line-height:10px;&quot;&gt;- UE基底: UDataAsset&lt;/div&gt;" vertex="1">
+          <mxGeometry height="44" width="182" x="4" y="28" as="geometry" />
+        </mxCell>
+        <mxCell id="stagedata-sep2" parent="stagedata" style="shape=line;strokeColor=#555555;" value="" vertex="1">
+          <mxGeometry height="1" width="190" y="72" as="geometry" />
+        </mxCell>
+        <mxCell id="stagedata-ops" parent="stagedata" style="text;html=1;whiteSpace=wrap;overflow=hidden;fontFamily=Yu Gothic;fontSize=8;spacing=0;strokeColor=none;align=left;verticalAlign=top;" value="&lt;div style=&quot;line-height:10px;&quot;&gt;+ 波データ取得(): WaveEntry&lt;/div&gt;&lt;div style=&quot;line-height:10px;&quot;&gt;ステージ構成は自由に設定&lt;/div&gt;" vertex="1">
+          <mxGeometry height="44" width="182" x="4" y="76" as="geometry" />
+        </mxCell>
+        <mxCell id="wave" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="" vertex="1">
+          <mxGeometry height="145" width="210" x="1050" y="269.5" as="geometry" />
+        </mxCell>
+        <mxCell id="wave-title" parent="wave" style="text;html=1;whiteSpace=wrap;overflow=hidden;fontFamily=Yu Gothic;fontSize=8;spacing=0;strokeColor=none;align=center;verticalAlign=middle;" value="ACactusEnemySpawner（敵生成・波管理）" vertex="1">
+          <mxGeometry height="24" width="210" as="geometry" />
+        </mxCell>
+        <mxCell id="wave-sep1" parent="wave" style="shape=line;strokeColor=#555555;" value="" vertex="1">
+          <mxGeometry height="1" width="210" y="24" as="geometry" />
+        </mxCell>
+        <mxCell id="wave-attrs" parent="wave" style="text;html=1;whiteSpace=wrap;overflow=hidden;fontFamily=Yu Gothic;fontSize=8;spacing=0;strokeColor=none;align=left;verticalAlign=top;" value="&lt;div style=&quot;line-height:10px;&quot;&gt;- 設定: UCactusStageData*&lt;/div&gt;&lt;div style=&quot;line-height:10px;&quot;&gt;- 現在波 / 未出現数: int&lt;/div&gt;&lt;div style=&quot;line-height:10px;&quot;&gt;- 生存敵: 敵の弱参照一覧&lt;/div&gt;&lt;div style=&quot;line-height:10px;&quot;&gt;- 出現地点: ATargetPoint*[]&lt;/div&gt;&lt;div style=&quot;line-height:10px;&quot;&gt;- UE基底: AActor&lt;/div&gt;" vertex="1">
+          <mxGeometry height="54" width="202" x="4" y="28" as="geometry" />
+        </mxCell>
+        <mxCell id="wave-sep2" parent="wave" style="shape=line;strokeColor=#555555;" value="" vertex="1">
+          <mxGeometry height="1" width="210" y="82" as="geometry" />
+        </mxCell>
+        <mxCell id="wave-ops" parent="wave" style="text;html=1;whiteSpace=wrap;overflow=hidden;fontFamily=Yu Gothic;fontSize=8;spacing=0;strokeColor=none;align=left;verticalAlign=top;" value="&lt;div style=&quot;line-height:10px;&quot;&gt;+ 開始 / 停止 / 初期化(): void&lt;/div&gt;&lt;div style=&quot;line-height:10px;&quot;&gt;+ 波データから敵生成(): void&lt;/div&gt;&lt;div style=&quot;line-height:10px;&quot;&gt;+ 撃破記録 / 次の波へ(): void&lt;/div&gt;&lt;div style=&quot;line-height:10px;&quot;&gt;UEのSpawnActor / Timerを使用&lt;/div&gt;" vertex="1">
+          <mxGeometry height="59" width="202" x="4" y="86" as="geometry" />
+        </mxCell>
+        <mxCell id="weapon" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="" vertex="1">
+          <mxGeometry height="140" width="210" x="474" y="485" as="geometry" />
+        </mxCell>
+        <mxCell id="weapon-title" parent="weapon" style="text;html=1;whiteSpace=wrap;overflow=hidden;fontFamily=Yu Gothic;fontSize=8;spacing=0;strokeColor=none;align=center;verticalAlign=middle;" value="UCactusWeaponComponent（武器）" vertex="1">
+          <mxGeometry height="24" width="210" as="geometry" />
+        </mxCell>
+        <mxCell id="weapon-sep1" parent="weapon" style="shape=line;strokeColor=#555555;" value="" vertex="1">
+          <mxGeometry height="1" width="210" y="24" as="geometry" />
+        </mxCell>
+        <mxCell id="weapon-attrs" parent="weapon" style="text;html=1;whiteSpace=wrap;overflow=hidden;fontFamily=Yu Gothic;fontSize=8;spacing=0;strokeColor=none;align=left;verticalAlign=top;" value="&lt;div style=&quot;line-height:10px;&quot;&gt;- 威力 / 発射間隔 / 弾速: float&lt;/div&gt;&lt;div style=&quot;line-height:10px;&quot;&gt;- 主 / 副武器: WeaponSettings&lt;/div&gt;&lt;div style=&quot;line-height:10px;&quot;&gt;- 副武器残量 / 冷却時間: float&lt;/div&gt;&lt;div style=&quot;line-height:10px;&quot;&gt;- 発射数 / 強化残り時間: int / float&lt;/div&gt;&lt;div style=&quot;line-height:10px;&quot;&gt;- 弾クラス: TSubclassOf&amp;lt;Projectile&amp;gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="54" width="202" x="4" y="28" as="geometry" />
+        </mxCell>
+        <mxCell id="weapon-sep2" parent="weapon" style="shape=line;strokeColor=#555555;" value="" vertex="1">
+          <mxGeometry height="1" width="210" y="82" as="geometry" />
+        </mxCell>
+        <mxCell id="weapon-ops" parent="weapon" style="text;html=1;whiteSpace=wrap;overflow=hidden;fontFamily=Yu Gothic;fontSize=8;spacing=0;strokeColor=none;align=left;verticalAlign=top;" value="&lt;div style=&quot;line-height:10px;&quot;&gt;+ 射撃開始 / 停止 / 切替(): void&lt;/div&gt;&lt;div style=&quot;line-height:10px;&quot;&gt;+ 発射(): void&lt;/div&gt;&lt;div style=&quot;line-height:10px;&quot;&gt;+ 弾数強化 / 解除(): void&lt;/div&gt;&lt;div style=&quot;line-height:10px;&quot;&gt;UE基底: UActorComponent&lt;/div&gt;" vertex="1">
+          <mxGeometry height="54" width="202" x="4" y="86" as="geometry" />
+        </mxCell>
+        <mxCell id="projectile" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="" vertex="1">
+          <mxGeometry height="125" width="210" x="216" y="660" as="geometry" />
+        </mxCell>
+        <mxCell id="projectile-title" parent="projectile" style="text;html=1;whiteSpace=wrap;overflow=hidden;fontFamily=Yu Gothic;fontSize=8;spacing=0;strokeColor=none;align=center;verticalAlign=middle;" value="ACactusProjectile（弾）" vertex="1">
+          <mxGeometry height="24" width="210" as="geometry" />
+        </mxCell>
+        <mxCell id="projectile-sep1" parent="projectile" style="shape=line;strokeColor=#555555;" value="" vertex="1">
+          <mxGeometry height="1" width="210" y="24" as="geometry" />
+        </mxCell>
+        <mxCell id="projectile-attrs" parent="projectile" style="text;html=1;whiteSpace=wrap;overflow=hidden;fontFamily=Yu Gothic;fontSize=8;spacing=0;strokeColor=none;align=left;verticalAlign=top;" value="&lt;div style=&quot;line-height:10px;&quot;&gt;- 移動: ProjectileMovementComponent&lt;/div&gt;&lt;div style=&quot;line-height:10px;&quot;&gt;- 判定: SphereComponent&lt;/div&gt;&lt;div style=&quot;line-height:10px;&quot;&gt;- 威力 / 寿命 / 陣営 / 発射者&lt;/div&gt;&lt;div style=&quot;line-height:10px;&quot;&gt;- UE基底: AActor&lt;/div&gt;" vertex="1">
+          <mxGeometry height="44" width="202" x="4" y="28" as="geometry" />
+        </mxCell>
+        <mxCell id="projectile-sep2" parent="projectile" style="shape=line;strokeColor=#555555;" value="" vertex="1">
+          <mxGeometry height="1" width="210" y="72" as="geometry" />
+        </mxCell>
+        <mxCell id="projectile-ops" parent="projectile" style="text;html=1;whiteSpace=wrap;overflow=hidden;fontFamily=Yu Gothic;fontSize=8;spacing=0;strokeColor=none;align=left;verticalAlign=top;" value="&lt;div style=&quot;line-height:10px;&quot;&gt;+ 有効化(発射情報): void&lt;/div&gt;&lt;div style=&quot;line-height:10px;&quot;&gt;+ 命中 / 無効化(): void&lt;/div&gt;" vertex="1">
+          <mxGeometry height="49" width="202" x="4" y="76" as="geometry" />
+        </mxCell>
+        <mxCell id="enemy" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="" vertex="1">
+          <mxGeometry height="125" width="190" x="1020" y="460" as="geometry" />
+        </mxCell>
+        <mxCell id="enemy-title" parent="enemy" style="text;html=1;whiteSpace=wrap;overflow=hidden;fontFamily=Yu Gothic;fontSize=8;spacing=0;strokeColor=none;align=center;verticalAlign=middle;" value="&lt;div style=&quot;line-height:10px;&quot;&gt;ACactusEnemy（敵）&lt;/div&gt;&lt;div style=&quot;line-height:10px;&quot;&gt;継承: ACharacter&lt;/div&gt;" vertex="1">
+          <mxGeometry height="24" width="190" as="geometry" />
+        </mxCell>
+        <mxCell id="enemy-sep1" parent="enemy" style="shape=line;strokeColor=#555555;" value="" vertex="1">
+          <mxGeometry height="1" width="190" y="24" as="geometry" />
+        </mxCell>
+        <mxCell id="enemy-attrs" parent="enemy" style="text;html=1;whiteSpace=wrap;overflow=hidden;fontFamily=Yu Gothic;fontSize=8;spacing=0;strokeColor=none;align=left;verticalAlign=top;" value="&lt;div style=&quot;line-height:10px;&quot;&gt;# 体力 / 威力: float&lt;/div&gt;&lt;div style=&quot;line-height:10px;&quot;&gt;# 行動: ACactusEnemyAIController*&lt;/div&gt;&lt;div style=&quot;line-height:10px;&quot;&gt;# 武器: WeaponComponent（射撃型）&lt;/div&gt;&lt;div style=&quot;line-height:10px;&quot;&gt;# ドロップ設定: ItemDropEntry[]&lt;/div&gt;&lt;div style=&quot;line-height:10px;&quot;&gt;- 生成元: EnemySpawnerへの弱参照&lt;/div&gt;" vertex="1">
+          <mxGeometry height="54" width="182" x="4" y="28" as="geometry" />
+        </mxCell>
+        <mxCell id="enemy-sep2" parent="enemy" style="shape=line;strokeColor=#555555;" value="" vertex="1">
+          <mxGeometry height="1" width="190" y="82" as="geometry" />
+        </mxCell>
+        <mxCell id="enemy-ops" parent="enemy" style="text;html=1;whiteSpace=wrap;overflow=hidden;fontFamily=Yu Gothic;fontSize=8;spacing=0;strokeColor=none;align=left;verticalAlign=top;" value="&lt;div style=&quot;line-height:10px;&quot;&gt;+ 攻撃(): void {virtual}&lt;/div&gt;&lt;div style=&quot;line-height:10px;&quot;&gt;+ 被ダメージ / 撃破 / 通知(): void&lt;/div&gt;&lt;div style=&quot;line-height:10px;&quot;&gt;+ 撃破時アイテム生成(): void&lt;/div&gt;" vertex="1">
+          <mxGeometry height="39" width="182" x="4" y="86" as="geometry" />
+        </mxCell>
+        <mxCell id="ai" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="" vertex="1">
+          <mxGeometry height="115" width="190" x="1270" y="431" as="geometry" />
+        </mxCell>
+        <mxCell id="ai-title" parent="ai" style="text;html=1;whiteSpace=wrap;overflow=hidden;fontFamily=Yu Gothic;fontSize=8;spacing=0;strokeColor=none;align=center;verticalAlign=middle;" value="ACactusEnemyAIController（敵の行動）" vertex="1">
+          <mxGeometry height="24" width="190" as="geometry" />
+        </mxCell>
+        <mxCell id="ai-sep1" parent="ai" style="shape=line;strokeColor=#555555;" value="" vertex="1">
+          <mxGeometry height="1" width="190" y="24" as="geometry" />
+        </mxCell>
+        <mxCell id="ai-attrs" parent="ai" style="text;html=1;whiteSpace=wrap;overflow=hidden;fontFamily=Yu Gothic;fontSize=8;spacing=0;strokeColor=none;align=left;verticalAlign=top;" value="&lt;div style=&quot;line-height:10px;&quot;&gt;- 目標: Playerへの弱参照&lt;/div&gt;&lt;div style=&quot;line-height:10px;&quot;&gt;- 行動状態 / 更新間隔&lt;/div&gt;&lt;div style=&quot;line-height:10px;&quot;&gt;- UE基底: AAIController&lt;/div&gt;" vertex="1">
+          <mxGeometry height="34" width="182" x="4" y="28" as="geometry" />
+        </mxCell>
+        <mxCell id="ai-sep2" parent="ai" style="shape=line;strokeColor=#555555;" value="" vertex="1">
+          <mxGeometry height="1" width="190" y="62" as="geometry" />
+        </mxCell>
+        <mxCell id="ai-ops" parent="ai" style="text;html=1;whiteSpace=wrap;overflow=hidden;fontFamily=Yu Gothic;fontSize=8;spacing=0;strokeColor=none;align=left;verticalAlign=top;" value="&lt;div style=&quot;line-height:10px;&quot;&gt;+ 判断更新(): void&lt;/div&gt;&lt;div style=&quot;line-height:10px;&quot;&gt;+ 追跡 / 照準 / 攻撃指示(): void&lt;/div&gt;&lt;div style=&quot;line-height:10px;&quot;&gt;判断を時間分散して負荷を抑える&lt;/div&gt;" vertex="1">
+          <mxGeometry height="49" width="182" x="4" y="66" as="geometry" />
+        </mxCell>
+        <mxCell id="pool" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="" vertex="1">
+          <mxGeometry height="115" width="210" x="474" y="660" as="geometry" />
+        </mxCell>
+        <mxCell id="pool-title" parent="pool" style="text;html=1;whiteSpace=wrap;overflow=hidden;fontFamily=Yu Gothic;fontSize=8;spacing=0;strokeColor=none;align=center;verticalAlign=middle;" value="UCactusProjectilePool（弾プール）" vertex="1">
+          <mxGeometry height="24" width="210" as="geometry" />
+        </mxCell>
+        <mxCell id="pool-sep1" parent="pool" style="shape=line;strokeColor=#555555;" value="" vertex="1">
+          <mxGeometry height="1" width="210" y="24" as="geometry" />
+        </mxCell>
+        <mxCell id="pool-attrs" parent="pool" style="text;html=1;whiteSpace=wrap;overflow=hidden;fontFamily=Yu Gothic;fontSize=8;spacing=0;strokeColor=none;align=left;verticalAlign=top;" value="&lt;div style=&quot;line-height:10px;&quot;&gt;- 待機 / 使用中: 弾の一覧&lt;/div&gt;&lt;div style=&quot;line-height:10px;&quot;&gt;- 弾クラス別の再利用管理&lt;/div&gt;&lt;div style=&quot;line-height:10px;&quot;&gt;- UE基底: UWorldSubsystem&lt;/div&gt;" vertex="1">
+          <mxGeometry height="34" width="202" x="4" y="28" as="geometry" />
+        </mxCell>
+        <mxCell id="pool-sep2" parent="pool" style="shape=line;strokeColor=#555555;" value="" vertex="1">
+          <mxGeometry height="1" width="210" y="62" as="geometry" />
+        </mxCell>
+        <mxCell id="pool-ops" parent="pool" style="text;html=1;whiteSpace=wrap;overflow=hidden;fontFamily=Yu Gothic;fontSize=8;spacing=0;strokeColor=none;align=left;verticalAlign=top;" value="&lt;div style=&quot;line-height:10px;&quot;&gt;+ 取得(弾クラス): Projectile*&lt;/div&gt;&lt;div style=&quot;line-height:10px;&quot;&gt;+ 返却(弾): void&lt;/div&gt;&lt;div style=&quot;line-height:10px;&quot;&gt;+ 局の初期化(): void&lt;/div&gt;" vertex="1">
+          <mxGeometry height="49" width="202" x="4" y="66" as="geometry" />
+        </mxCell>
+        <mxCell id="small" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="" vertex="1">
+          <mxGeometry height="100" width="180" x="830" y="640" as="geometry" />
+        </mxCell>
+        <mxCell id="small-title" parent="small" style="text;html=1;whiteSpace=wrap;overflow=hidden;fontFamily=Yu Gothic;fontSize=8;spacing=0;strokeColor=none;align=center;verticalAlign=middle;" value="ACactusSmallEnemy（小型敵）" vertex="1">
+          <mxGeometry height="24" width="180" as="geometry" />
+        </mxCell>
+        <mxCell id="small-sep1" parent="small" style="shape=line;strokeColor=#555555;" value="" vertex="1">
+          <mxGeometry height="1" width="180" y="24" as="geometry" />
+        </mxCell>
+        <mxCell id="small-attrs" parent="small" style="text;html=1;whiteSpace=wrap;overflow=hidden;fontFamily=Yu Gothic;fontSize=8;spacing=0;strokeColor=none;align=left;verticalAlign=top;" value="&lt;div style=&quot;line-height:10px;&quot;&gt;- 移動速度 / 攻撃間隔&lt;/div&gt;&lt;div style=&quot;line-height:10px;&quot;&gt;- 同時制御の対象: 50～100体&lt;/div&gt;" vertex="1">
+          <mxGeometry height="24" width="172" x="4" y="28" as="geometry" />
+        </mxCell>
+        <mxCell id="small-sep2" parent="small" style="shape=line;strokeColor=#555555;" value="" vertex="1">
+          <mxGeometry height="1" width="180" y="52" as="geometry" />
+        </mxCell>
+        <mxCell id="small-ops" parent="small" style="text;html=1;whiteSpace=wrap;overflow=hidden;fontFamily=Yu Gothic;fontSize=8;spacing=0;strokeColor=none;align=left;verticalAlign=top;" value="&lt;div style=&quot;line-height:10px;&quot;&gt;+ 攻撃(): void {override}&lt;/div&gt;&lt;div style=&quot;line-height:10px;&quot;&gt;数の多い敵として設定&lt;/div&gt;" vertex="1">
+          <mxGeometry height="44" width="172" x="4" y="56" as="geometry" />
+        </mxCell>
+        <mxCell id="large" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="" vertex="1">
+          <mxGeometry height="100" width="180" x="1025" y="642.5" as="geometry" />
+        </mxCell>
+        <mxCell id="large-title" parent="large" style="text;html=1;whiteSpace=wrap;overflow=hidden;fontFamily=Yu Gothic;fontSize=8;spacing=0;strokeColor=none;align=center;verticalAlign=middle;" value="ACactusLargeEnemy（大型敵）" vertex="1">
+          <mxGeometry height="24" width="180" as="geometry" />
+        </mxCell>
+        <mxCell id="large-sep1" parent="large" style="shape=line;strokeColor=#555555;" value="" vertex="1">
+          <mxGeometry height="1" width="180" y="24" as="geometry" />
+        </mxCell>
+        <mxCell id="large-attrs" parent="large" style="text;html=1;whiteSpace=wrap;overflow=hidden;fontFamily=Yu Gothic;fontSize=8;spacing=0;strokeColor=none;align=left;verticalAlign=top;" value="&lt;div style=&quot;line-height:10px;&quot;&gt;- 最大体力: 高&lt;/div&gt;&lt;div style=&quot;line-height:10px;&quot;&gt;- プレイヤー被ダメージ: 高&lt;/div&gt;" vertex="1">
+          <mxGeometry height="24" width="172" x="4" y="28" as="geometry" />
+        </mxCell>
+        <mxCell id="large-sep2" parent="large" style="shape=line;strokeColor=#555555;" value="" vertex="1">
+          <mxGeometry height="1" width="180" y="52" as="geometry" />
+        </mxCell>
+        <mxCell id="large-ops" parent="large" style="text;html=1;whiteSpace=wrap;overflow=hidden;fontFamily=Yu Gothic;fontSize=8;spacing=0;strokeColor=none;align=left;verticalAlign=top;" value="&lt;div style=&quot;line-height:10px;&quot;&gt;+ 攻撃(): void {override}&lt;/div&gt;&lt;div style=&quot;line-height:10px;&quot;&gt;小型敵より高耐久・高威力&lt;/div&gt;" vertex="1">
+          <mxGeometry height="44" width="172" x="4" y="56" as="geometry" />
+        </mxCell>
+        <mxCell id="boss" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="" vertex="1">
+          <mxGeometry height="110" width="180" x="1230" y="632.5" as="geometry" />
+        </mxCell>
+        <mxCell id="boss-title" parent="boss" style="text;html=1;whiteSpace=wrap;overflow=hidden;fontFamily=Yu Gothic;fontSize=8;spacing=0;strokeColor=none;align=center;verticalAlign=middle;" value="ACactusBossEnemy（ボス）" vertex="1">
+          <mxGeometry height="24" width="180" as="geometry" />
+        </mxCell>
+        <mxCell id="boss-sep1" parent="boss" style="shape=line;strokeColor=#555555;" value="" vertex="1">
+          <mxGeometry height="1" width="180" y="24" as="geometry" />
+        </mxCell>
+        <mxCell id="boss-attrs" parent="boss" style="text;html=1;whiteSpace=wrap;overflow=hidden;fontFamily=Yu Gothic;fontSize=8;spacing=0;strokeColor=none;align=left;verticalAlign=top;" value="&lt;div style=&quot;line-height:10px;&quot;&gt;- 攻撃段階: Phase&lt;/div&gt;&lt;div style=&quot;line-height:10px;&quot;&gt;- 弾幕パターン / 残り体力&lt;/div&gt;" vertex="1">
+          <mxGeometry height="24" width="172" x="4" y="28" as="geometry" />
+        </mxCell>
+        <mxCell id="boss-sep2" parent="boss" style="shape=line;strokeColor=#555555;" value="" vertex="1">
+          <mxGeometry height="1" width="180" y="52" as="geometry" />
+        </mxCell>
+        <mxCell id="boss-ops" parent="boss" style="text;html=1;whiteSpace=wrap;overflow=hidden;fontFamily=Yu Gothic;fontSize=8;spacing=0;strokeColor=none;align=left;verticalAlign=top;" value="&lt;div style=&quot;line-height:10px;&quot;&gt;+ 攻撃(): void {override}&lt;/div&gt;&lt;div style=&quot;line-height:10px;&quot;&gt;+ 段階変更(): void&lt;/div&gt;&lt;div style=&quot;line-height:10px;&quot;&gt;ボス固有の攻撃を設定&lt;/div&gt;" vertex="1">
+          <mxGeometry height="54" width="172" x="4" y="56" as="geometry" />
+        </mxCell>
+        <mxCell id="simple-edge-0" edge="1" parent="1" source="game" style="edgeStyle=orthogonalEdgeStyle;rounded=0;curved=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#000000;fillColor=#000000;strokeWidth=1;dashed=0;startArrow=none;endArrow=classic;endFill=1;endSize=8;exitX=0;exitY=0.35;entryX=1;entryY=0.5;exitPerimeter=0;entryPerimeter=0;" target="screen" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="simple-edge-1" edge="1" parent="1" source="game" style="edgeStyle=orthogonalEdgeStyle;rounded=0;curved=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#000000;fillColor=#000000;strokeWidth=1;dashed=0;startArrow=none;endArrow=classic;endFill=1;endSize=8;exitX=0.5;exitY=1;entryX=0.5;entryY=0;exitPerimeter=0;entryPerimeter=0;" target="player" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="simple-edge-2" edge="1" parent="1" source="game" style="edgeStyle=orthogonalEdgeStyle;rounded=0;curved=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#000000;fillColor=#000000;strokeWidth=1;dashed=0;startArrow=none;endArrow=classic;endFill=1;endSize=8;exitX=1;exitY=0.7;entryX=0;entryY=0.5;exitPerimeter=0;entryPerimeter=0;" target="wave" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="simple-edge-3" edge="1" parent="1" source="pickup" style="edgeStyle=orthogonalEdgeStyle;rounded=0;curved=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#000000;fillColor=#000000;strokeWidth=1;dashed=0;startArrow=none;endArrow=classic;endFill=1;endSize=8;exitX=0;exitY=0.5;entryX=1;entryY=0.35;exitPerimeter=0;entryPerimeter=0;" target="game" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="simple-edge-4" edge="1" parent="1" source="title" style="edgeStyle=orthogonalEdgeStyle;rounded=0;curved=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#000000;fillColor=#000000;strokeWidth=1;dashed=0;startArrow=none;endArrow=classic;endFill=1;endSize=8;exitX=0.5;exitY=0;entryX=0.21052631578947367;entryY=1;exitPerimeter=0;entryPerimeter=0;" target="screen" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="simple-edge-5" edge="1" parent="1" source="hud" style="edgeStyle=orthogonalEdgeStyle;rounded=0;curved=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#000000;fillColor=#000000;strokeWidth=1;dashed=0;startArrow=none;endArrow=classic;endFill=1;endSize=8;exitX=0.5;exitY=0;entryX=0.5;entryY=1;exitPerimeter=0;entryPerimeter=0;" target="screen" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="simple-edge-6" edge="1" parent="1" source="result" style="edgeStyle=orthogonalEdgeStyle;rounded=0;curved=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#000000;fillColor=#000000;strokeWidth=1;dashed=0;startArrow=none;endArrow=classic;endFill=1;endSize=8;exitX=0.5;exitY=0;entryX=0.7894736842105263;entryY=1;exitPerimeter=0;entryPerimeter=0;" target="screen" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="simple-edge-7" edge="1" parent="1" source="wave" style="edgeStyle=orthogonalEdgeStyle;rounded=0;curved=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#000000;fillColor=#000000;strokeWidth=1;dashed=0;startArrow=none;endArrow=classic;endFill=1;endSize=8;exitX=1;exitY=0.5;entryX=0;entryY=0.6041666666666666;exitPerimeter=0;entryPerimeter=0;" target="stagedata" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="simple-edge-8" edge="1" parent="1" source="wave" style="edgeStyle=orthogonalEdgeStyle;rounded=0;curved=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#000000;fillColor=#000000;strokeWidth=1;dashed=0;startArrow=none;endArrow=classic;endFill=1;endSize=8;exitX=0.5;exitY=1;entryX=0.5526315789473685;entryY=0;exitPerimeter=0;entryPerimeter=0;" target="enemy" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="simple-edge-9" edge="1" parent="1" source="player" style="edgeStyle=orthogonalEdgeStyle;rounded=0;curved=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#000000;fillColor=#000000;strokeWidth=1;dashed=0;startArrow=none;endArrow=classic;endFill=1;endSize=8;exitX=0;exitY=0.6;entryX=1;entryY=0.4;exitPerimeter=0;entryPerimeter=0;" target="weapon" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="simple-edge-10" edge="1" parent="1" source="weapon" style="edgeStyle=orthogonalEdgeStyle;rounded=0;curved=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#000000;fillColor=#000000;strokeWidth=1;dashed=0;startArrow=none;endArrow=classic;endFill=1;endSize=8;exitX=0.5;exitY=1;entryX=0.5;entryY=0;exitPerimeter=0;entryPerimeter=0;" target="pool" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="simple-edge-11" edge="1" parent="1" source="pool" style="edgeStyle=orthogonalEdgeStyle;rounded=0;curved=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#000000;fillColor=#000000;strokeWidth=1;dashed=0;startArrow=none;endArrow=classic;endFill=1;endSize=8;exitX=0;exitY=0.5;entryX=1;entryY=0.46;exitPerimeter=0;entryPerimeter=0;" target="projectile" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="simple-edge-12" edge="1" parent="1" source="ai" style="edgeStyle=orthogonalEdgeStyle;rounded=0;curved=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#000000;fillColor=#000000;strokeWidth=1;dashed=0;startArrow=none;endArrow=classic;endFill=1;endSize=8;exitX=0;exitY=0.5;entryX=1;entryY=0.46;exitPerimeter=0;entryPerimeter=0;" target="enemy" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="simple-edge-13" edge="1" parent="1" source="small" style="edgeStyle=orthogonalEdgeStyle;rounded=0;curved=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#000000;fillColor=#000000;strokeWidth=1;dashed=0;startArrow=none;endArrow=classic;endFill=1;endSize=8;exitX=0.5;exitY=0;entryX=0.2;entryY=1;exitPerimeter=0;entryPerimeter=0;" target="enemy" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="simple-edge-14" edge="1" parent="1" source="large" style="edgeStyle=orthogonalEdgeStyle;rounded=0;curved=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#000000;fillColor=#000000;strokeWidth=1;dashed=0;startArrow=none;endArrow=classic;endFill=1;endSize=8;exitX=0.5;exitY=0;entryX=0.5;entryY=1;exitPerimeter=0;entryPerimeter=0;" target="enemy" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="simple-edge-15" edge="1" parent="1" source="boss" style="edgeStyle=orthogonalEdgeStyle;rounded=0;curved=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#000000;fillColor=#000000;strokeWidth=1;dashed=0;startArrow=none;endArrow=classic;endFill=1;endSize=8;exitX=0.5;exitY=0;entryX=0.8;entryY=1;exitPerimeter=0;entryPerimeter=0;" target="enemy" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="feedback-item-player" edge="1" parent="1" source="pickup" style="edgeStyle=orthogonalEdgeStyle;rounded=0;curved=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#000000;fillColor=#000000;strokeWidth=1;dashed=0;startArrow=none;endArrow=classic;endFill=1;endSize=8;exitX=0;exitY=0.9;entryX=1;entryY=0.2;exitPerimeter=0;entryPerimeter=0;" target="player" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="item-battery" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="" vertex="1">
+          <mxGeometry height="70" width="155" x="1200" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="item-battery-title" parent="item-battery" style="text;html=1;whiteSpace=wrap;overflow=hidden;fontFamily=Yu Gothic;fontSize=8;spacing=0;strokeColor=none;align=center;verticalAlign=middle;" value="&lt;div style=&quot;line-height:10px;&quot;&gt;ACactusBatteryPickup&lt;/div&gt;&lt;div style=&quot;line-height:10px;&quot;&gt;電池 / 継承: ItemPickup&lt;/div&gt;" vertex="1">
+          <mxGeometry height="24" width="155" as="geometry" />
+        </mxCell>
+        <mxCell id="item-battery-sep1" parent="item-battery" style="shape=line;strokeColor=#555555;" value="" vertex="1">
+          <mxGeometry height="1" width="155" y="24" as="geometry" />
+        </mxCell>
+        <mxCell id="item-battery-attrs" parent="item-battery" style="text;html=1;whiteSpace=wrap;overflow=hidden;fontFamily=Yu Gothic;fontSize=8;spacing=0;strokeColor=none;align=left;verticalAlign=top;" value="&lt;div style=&quot;line-height:10px;&quot;&gt;- 回復量: float&lt;/div&gt;" vertex="1">
+          <mxGeometry height="14" width="147" x="4" y="28" as="geometry" />
+        </mxCell>
+        <mxCell id="item-battery-sep2" parent="item-battery" style="shape=line;strokeColor=#555555;" value="" vertex="1">
+          <mxGeometry height="1" width="155" y="42" as="geometry" />
+        </mxCell>
+        <mxCell id="item-battery-ops" parent="item-battery" style="text;html=1;whiteSpace=wrap;overflow=hidden;fontFamily=Yu Gothic;fontSize=8;spacing=0;strokeColor=none;align=left;verticalAlign=top;" value="&lt;div style=&quot;line-height:10px;&quot;&gt;+ 効果適用(Player): void {override}&lt;/div&gt;" vertex="1">
+          <mxGeometry height="24.0" width="147" x="4" y="46" as="geometry" />
+        </mxCell>
+        <mxCell id="item-score" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="" vertex="1">
+          <mxGeometry height="70" width="155" x="1380" y="45" as="geometry" />
+        </mxCell>
+        <mxCell id="item-score-title" parent="item-score" style="text;html=1;whiteSpace=wrap;overflow=hidden;fontFamily=Yu Gothic;fontSize=8;spacing=0;strokeColor=none;align=center;verticalAlign=middle;" value="&lt;div style=&quot;line-height:10px;&quot;&gt;ACactusScorePickup&lt;/div&gt;&lt;div style=&quot;line-height:10px;&quot;&gt;得点 / 継承: ItemPickup&lt;/div&gt;" vertex="1">
+          <mxGeometry height="24" width="155" as="geometry" />
+        </mxCell>
+        <mxCell id="item-score-sep1" parent="item-score" style="shape=line;strokeColor=#555555;" value="" vertex="1">
+          <mxGeometry height="1" width="155" y="24" as="geometry" />
+        </mxCell>
+        <mxCell id="item-score-attrs" parent="item-score" style="text;html=1;whiteSpace=wrap;overflow=hidden;fontFamily=Yu Gothic;fontSize=8;spacing=0;strokeColor=none;align=left;verticalAlign=top;" value="&lt;div style=&quot;line-height:10px;&quot;&gt;- 得点: int32&lt;/div&gt;" vertex="1">
+          <mxGeometry height="14" width="147" x="4" y="28" as="geometry" />
+        </mxCell>
+        <mxCell id="item-score-sep2" parent="item-score" style="shape=line;strokeColor=#555555;" value="" vertex="1">
+          <mxGeometry height="1" width="155" y="42" as="geometry" />
+        </mxCell>
+        <mxCell id="item-score-ops" parent="item-score" style="text;html=1;whiteSpace=wrap;overflow=hidden;fontFamily=Yu Gothic;fontSize=8;spacing=0;strokeColor=none;align=left;verticalAlign=top;" value="&lt;div style=&quot;line-height:10px;&quot;&gt;+ 効果適用(Player): void {override}&lt;/div&gt;" vertex="1">
+          <mxGeometry height="24.0" width="147" x="4" y="46" as="geometry" />
+        </mxCell>
+        <mxCell id="item-speed" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="" vertex="1">
+          <mxGeometry height="80" width="155" x="1200" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="item-speed-title" parent="item-speed" style="text;html=1;whiteSpace=wrap;overflow=hidden;fontFamily=Yu Gothic;fontSize=8;spacing=0;strokeColor=none;align=center;verticalAlign=middle;" value="&lt;div style=&quot;line-height:10px;&quot;&gt;ACactusSpeedPickup&lt;/div&gt;&lt;div style=&quot;line-height:10px;&quot;&gt;速度強化 / 継承: ItemPickup&lt;/div&gt;" vertex="1">
+          <mxGeometry height="24" width="155" as="geometry" />
+        </mxCell>
+        <mxCell id="item-speed-sep1" parent="item-speed" style="shape=line;strokeColor=#555555;" value="" vertex="1">
+          <mxGeometry height="1" width="155" y="24" as="geometry" />
+        </mxCell>
+        <mxCell id="item-speed-attrs" parent="item-speed" style="text;html=1;whiteSpace=wrap;overflow=hidden;fontFamily=Yu Gothic;fontSize=8;spacing=0;strokeColor=none;align=left;verticalAlign=top;" value="&lt;div style=&quot;line-height:10px;&quot;&gt;- 速度倍率: float&lt;/div&gt;&lt;div style=&quot;line-height:10px;&quot;&gt;- 効果時間: float&lt;/div&gt;" vertex="1">
+          <mxGeometry height="24" width="147" x="4" y="28" as="geometry" />
+        </mxCell>
+        <mxCell id="item-speed-sep2" parent="item-speed" style="shape=line;strokeColor=#555555;" value="" vertex="1">
+          <mxGeometry height="1" width="155" y="52" as="geometry" />
+        </mxCell>
+        <mxCell id="item-speed-ops" parent="item-speed" style="text;html=1;whiteSpace=wrap;overflow=hidden;fontFamily=Yu Gothic;fontSize=8;spacing=0;strokeColor=none;align=left;verticalAlign=top;" value="&lt;div style=&quot;line-height:10px;&quot;&gt;+ 効果適用(Player): void {override}&lt;/div&gt;" vertex="1">
+          <mxGeometry height="24.0" width="147" x="4" y="56" as="geometry" />
+        </mxCell>
+        <mxCell id="item-firepower" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="" vertex="1">
+          <mxGeometry height="80" width="155" x="1380" y="170" as="geometry" />
+        </mxCell>
+        <mxCell id="item-firepower-title" parent="item-firepower" style="text;html=1;whiteSpace=wrap;overflow=hidden;fontFamily=Yu Gothic;fontSize=8;spacing=0;strokeColor=none;align=center;verticalAlign=middle;" value="&lt;div style=&quot;line-height:10px;&quot;&gt;ACactusFirepowerPickup&lt;/div&gt;&lt;div style=&quot;line-height:10px;&quot;&gt;弾数強化 / 継承: ItemPickup&lt;/div&gt;" vertex="1">
+          <mxGeometry height="24" width="155" as="geometry" />
+        </mxCell>
+        <mxCell id="item-firepower-sep1" parent="item-firepower" style="shape=line;strokeColor=#555555;" value="" vertex="1">
+          <mxGeometry height="1" width="155" y="24" as="geometry" />
+        </mxCell>
+        <mxCell id="item-firepower-attrs" parent="item-firepower" style="text;html=1;whiteSpace=wrap;overflow=hidden;fontFamily=Yu Gothic;fontSize=8;spacing=0;strokeColor=none;align=left;verticalAlign=top;" value="&lt;div style=&quot;line-height:10px;&quot;&gt;- 追加弾数: int32&lt;/div&gt;&lt;div style=&quot;line-height:10px;&quot;&gt;- 効果時間: float&lt;/div&gt;" vertex="1">
+          <mxGeometry height="24" width="147" x="4" y="28" as="geometry" />
+        </mxCell>
+        <mxCell id="item-firepower-sep2" parent="item-firepower" style="shape=line;strokeColor=#555555;" value="" vertex="1">
+          <mxGeometry height="1" width="155" y="52" as="geometry" />
+        </mxCell>
+        <mxCell id="item-firepower-ops" parent="item-firepower" style="text;html=1;whiteSpace=wrap;overflow=hidden;fontFamily=Yu Gothic;fontSize=8;spacing=0;strokeColor=none;align=left;verticalAlign=top;" value="&lt;div style=&quot;line-height:10px;&quot;&gt;+ 効果適用(Player): void {override}&lt;/div&gt;" vertex="1">
+          <mxGeometry height="24.0" width="147" x="4" y="56" as="geometry" />
+        </mxCell>
+        <mxCell id="item-battery-inherits" parent="1" edge="1" source="item-battery" target="pickup" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;curved=0;orthogonalLoop=1;jettySize=8;html=1;strokeColor=#000000;fillColor=#000000;strokeWidth=1;dashed=0;startArrow=none;endArrow=classic;endFill=1;endSize=8;exitX=0;exitY=0.5;entryX=1;entryY=0.08;exitPerimeter=0;entryPerimeter=0;">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="item-score-inherits" parent="1" edge="1" source="item-score" target="pickup" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;curved=0;orthogonalLoop=1;jettySize=8;html=1;strokeColor=#000000;fillColor=#000000;strokeWidth=1;dashed=0;startArrow=none;endArrow=classic;endFill=1;endSize=8;exitX=0.5;exitY=0;entryX=1;entryY=0.28;exitPerimeter=0;entryPerimeter=0;">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="item-speed-inherits" parent="1" edge="1" source="item-speed" target="pickup" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;curved=0;orthogonalLoop=1;jettySize=8;html=1;strokeColor=#000000;fillColor=#000000;strokeWidth=1;dashed=0;startArrow=none;endArrow=classic;endFill=1;endSize=8;exitX=0;exitY=0.5;entryX=1;entryY=0.72;exitPerimeter=0;entryPerimeter=0;">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="item-firepower-inherits" parent="1" edge="1" source="item-firepower" target="pickup" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;curved=0;orthogonalLoop=1;jettySize=8;html=1;strokeColor=#000000;fillColor=#000000;strokeWidth=1;dashed=0;startArrow=none;endArrow=classic;endFill=1;endSize=8;exitX=0.5;exitY=1;entryX=1;entryY=0.92;exitPerimeter=0;entryPerimeter=0;">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

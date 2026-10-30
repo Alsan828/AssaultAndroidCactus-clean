@@ -1,0 +1,13 @@
+/Binaries/
+/Intermediate/
+/Saved/
+/DerivedDataCache/
+/.vs/
+/.idea/
+*.sln
+*.slnx
+*.VC.db
+*.user
+/Source.zip
+*.pdb
+*.log
